@@ -1,5 +1,5 @@
 <h1>
-    <a href="https://www.dio.me/">
+    <a href="https://www.globo.com/">
      <img align="center" width="40px" src="https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png"></a>
     <span> Buscador de CEP</span>
 </h1>
