@@ -1,6 +1,6 @@
 <h1>
     <a href="https://www.globo.com/">
-     <img align="center" width="40px" src="https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png"></a>
+     <img align="center" width="40px" src="https://github.com/manuelfbfilho/Burcador_CEP/blob/main/1.png?raw=true"></a>
     <span> Buscador de CEP</span>
 </h1>
 
