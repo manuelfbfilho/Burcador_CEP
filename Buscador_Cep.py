@@ -2,10 +2,8 @@ import tkinter as tk
 import requests
 import re
 
-
-
 # Função para realizar a pesquisa do CEP
-def pesquisar_cep():
+def pesquisar_cep(event=None):
     cep = cep_entry.get()
 
     # Validação do CEP (exemplo: verificar se possui 8 dígitos)
@@ -27,7 +25,8 @@ def pesquisar_cep():
         cidade_label.config(text=f"{data['localidade']}")
         estado_label.config(text=f"{data['uf']}")
         ddd_label.config(text=f"{data['ddd']}")
-
+        cep_label.config(text=f"{data['cep']}")
+        
 # Configurações da janela principal
 root = tk.Tk()
 root.title("Buscador de CEP")
@@ -46,14 +45,14 @@ canvas.create_image(0, 0, anchor="nw", image=bg_image)
 
 # Caixa de texto para digitar o CEP
 cep_entry = tk.Entry(root, width=19, bg="#007c8a", relief="flat", font=("Helvetica", 10))
-cep_entry.place(x=283, y=76)
+cep_entry.place(x=280, y=78)
 
 # Carregue a imagem do botão (Colocar o endereço de onde está sua imagem do botão)
-button_image = tk.PhotoImage(file="C:\\Users\\Dell\\Downloads\\BotaoPeq.png")
+button_image = tk.PhotoImage(file="C:\\Users\\Dell\\Downloads\\Aulas_Python\\BuscaCEP\\BotaoPeq.png")
 
 # Crie um rótulo para exibir a imagem como botão
 custom_button = tk.Button(root, image=button_image, command=pesquisar_cep, bd=0, highlightthickness=0, activebackground="#001c30")
-custom_button.place(x=440, y=68)
+custom_button.place(x=430, y=78)
 
 # Resto do seu código (rótulos para informações sobre o CEP)
 resultado_label = tk.Label(root, font=("Helvetica", 11), fg="red", bg="#001c30")
@@ -66,13 +65,18 @@ bairro_label = tk.Label(root, font=("Helvetica", 10), fg="#d7b317", bg="#001c30"
 bairro_label.place(x=350, y=200)
 
 cidade_label = tk.Label(root, font=("Helvetica", 10), fg="#d7b317", bg="#001c30")
-cidade_label.place(x=35, y=270)
+cidade_label.place(x=35, y=260)
 
 estado_label = tk.Label(root, font=("Helvetica", 10), fg="#d7b317", bg="#001c30")
-estado_label.place(x=250, y=270)
+estado_label.place(x=250, y=260)
 
 ddd_label = tk.Label(root, font=("Helvetica", 10), fg="#d7b317", bg="#001c30")
-ddd_label.place(x=400, y=270)
+ddd_label.place(x=400, y=260)
+
+cep_label = tk.Label(root, font=("Helvetica", 10), fg="#d7b317", bg="#001c30")
+cep_label.place(x=35, y=320)
+
+# Associa a tecla Enter à função pesquisar_cep
+root.bind("<Return>", pesquisar_cep)
 
 root.mainloop()
-
